@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/auth';
-import {map } from 'rxjs/operators';
+import {map, tap } from 'rxjs/operators';
 
 // todo sacar afuera
 interface User {
@@ -27,7 +27,7 @@ export class AuthService {
     return this.authState !== null;
   }
   get id(): string {
-    return this.authenticated ? this.authState.uid : "";
+    return this.authenticated ? this.authState.uid : '';
   }
   private isLoggedIn(): Observable<User | null> {
     return this.afAuth.authState.pipe(

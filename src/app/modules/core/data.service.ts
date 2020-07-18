@@ -4,12 +4,8 @@ import { AngularFirestore, DocumentReference } from '@angular/fire/firestore';
 import { AuthService } from './auth.service';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
+import { Note } from '../notes/models/note.model';
 
-interface Note {
-  id: string;
-  title: string;
-  content: string;
-}
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +20,7 @@ export class DataService {
     return new Date().getTime();
   }
 
-  getUserNoteCollection() {
+  private getUserNoteCollection() {
     return this.afDb.collection(this.USERS_COLLECTION + '/' + this.auth.id + '/' + this.NOTES_COLLECTION,
       ref => ref.orderBy('updated_at', 'desc')
     );

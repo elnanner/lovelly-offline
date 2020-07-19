@@ -18,7 +18,7 @@ export class NotesAddComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSaveNotes(values) {
+  onSaveNote(values) {
     this.data
       .addNote(values)
       .then(doc => {

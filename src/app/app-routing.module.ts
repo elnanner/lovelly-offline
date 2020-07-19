@@ -17,7 +17,7 @@ const routes: Routes = [
   {
     path: 'notes',
     loadChildren: './modules/notes/notes.module#NotesModule',
-    canLoad: [AuthGuard]
+    //canLoad: [AuthGuard]
   }
 ];
 

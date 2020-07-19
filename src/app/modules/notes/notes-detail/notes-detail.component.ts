@@ -15,6 +15,7 @@ export class NotesDetailComponent implements OnInit {
   public note$;
   public isEdit;
   private id;
+  isDbLoading$;
   constructor(
     private data: DataService,
     private route: ActivatedRoute,

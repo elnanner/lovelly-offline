@@ -1,6 +1,6 @@
 <mat-card>
     <mat-card-title>New Note</mat-card-title>
-    <mat-card-subtitle class="error" *ngIf="errorMessages$ | async as
+    <mat-card-subtitle class="error" *ngIf="errorMessage$ | async as
     errorMessage">
         {{ errorMessage }}
     </mat-card-subtitle>
